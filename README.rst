@@ -47,8 +47,9 @@ The manual approach should work as well:
 for requirements.txt use: 
 
 .. code-block:: python
-
-   git+https://github.com/eliuha/h1-python
+   
+   requests
+   git+https://github.com/eliuha/h1-python@main#egg=h1-python
 
 ========
 Examples
