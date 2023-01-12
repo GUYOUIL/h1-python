@@ -48,7 +48,7 @@ for requirements.txt use:
 
 .. code-block:: python
 
-git+https://github.com/eliuha/h1-python
+   git+https://github.com/eliuha/h1-python
 
 ========
 Examples
