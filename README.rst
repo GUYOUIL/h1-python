@@ -42,6 +42,13 @@ The manual approach should work as well:
 .. code-block:: bash
 
     python setup.py install
+    
+
+for requirements.txt use: 
+
+.. code-block:: python
+
+git+https://github.com/eliuha/h1-python
 
 ========
 Examples
