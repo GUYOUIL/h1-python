@@ -49,7 +49,7 @@ for requirements.txt use:
 .. code-block:: python
    
    requests
-   git+https://github.com/eliuha/h1-python@main#egg=h1-python
+   git+https://github.com/eliuha/h1-python@master#egg=h1-python
 
 ========
 Examples
