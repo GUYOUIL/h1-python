@@ -288,6 +288,7 @@ class Report(HackerOneResource):
         )
 
         self._make_relationship("reporter", self._hydrate_object)
+        self._make_relationship("weakness", self._hydrate_object)
         self._make_relationship("assignee", self._hydrate_object)
         self._make_relationship("program", self._hydrate_object)
         self._make_relationship("bounties", self._hydrate_list_of_objects, [])
@@ -381,6 +382,16 @@ class Swag(HackerOneObject):
         self._make_attribute("created_at", self._hydrate_datetime)
 
         self._make_relationship("address", self._hydrate_object)
+
+#move to relation
+class Weakness(HackerOneObject):
+    TYPE = "weakness"
+
+    def _hydrate(self):
+       self._make_attribute("name",self._hydrate_verbatim)
+
+    def __str__(self):
+        return self.name
 
 
 class Address(HackerOneObject):
@@ -483,6 +494,17 @@ class ActivityBugSpam(ActivityStateChange):
 class ActivityBugTriaged(ActivityStateChange):
     TYPE = "activity-bug-triaged"
 
+class ActivityBugPriorityChanged(ActivityStateChange):
+    TYPE = "activity-bug-priority-changed"
+
+
+class ActivityBugPendingProgramPeview(ActivityStateChange):
+    TYPE = "activity-bug-pending-program-review"
+
+
+class ActivityChangedScope(ActivityStateChange):
+    TYPE = "activity-changed-scope"
+
 
 class ActivityComment(ActivityBase):
     TYPE = "activity-comment"
@@ -510,7 +532,7 @@ class ActivityExternalUserJoined(ActivityBase):
     TYPE = "activity-external-user-joined"
 
     def _activity_hydrate(self):
-        self._make_attribute("duplicate_report_id", self._hydrate_verbatim)
+        self._make_attribute("duplicate_report_id", self._hydrate_verbatim, optional=True)
 
 
 class ActivityExternalUserRemoved(ActivityBase):
