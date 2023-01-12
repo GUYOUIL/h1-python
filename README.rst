@@ -121,6 +121,53 @@ Here's an example of using the client to figure out who your most prolific repor
     ...
     >>> print(reporter_count)
     Counter({<User - bestreporter>: 21, <User - another_reporter>: 12, <User - r3p0rt3r>: 2, <User - newbie>: 1})
+    
+--------------------------
+Create a csv
+--------------------------
+
+
+```
+from h1.client import HackerOneClient
+from h1.models import Report
+from key import h1_token_identifier, h1_api_token
+
+import datetime as dt
+
+
+week_ago = dt.datetime.now() - dt.timedelta(days=600)
+day_ago = dt.datetime.now() - dt.timedelta(days=1)
+
+c = HackerOneClient(h1_token_identifier, h1_api_token)
+c.s.verify = False
+
+listing = c.find_resources(Report, program=["program_name"], created_at__gt=week_ago, created_at__lt=day_ago)
+print(len(listing))
+
+
+
+with open("report.csv",'w') as f:
+    for item in listing:
+        id = item.id
+        title = item.title
+        weakness = "Undetermined"
+        time_to_first_response = item.time_to_first_response.seconds / 3600
+        time_to_closed = 'NaN'
+        if item.time_to_closed:
+            time_to_closed = item.time_to_closed.seconds / 3600
+        link = item.html_url
+
+        if item.weakness:
+            weakness = item.weakness.name
+
+        line = f"{id},{weakness},{title},{time_to_first_response},{time_to_closed},{link}\n"
+        f.write(line)
+
+
+
+
+```
+
 
 =============
 Running Tests
@@ -132,3 +179,4 @@ Running Tests
     source env/bin/activate
     make bootstrap
     make test
+
