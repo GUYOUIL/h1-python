@@ -4,8 +4,21 @@
 #
 #    pip-compile --no-index --output-file requirements.txt requirements.in
 #
-futures==3.0.5            # via requests-futures
+certifi==2022.12.7
+    # via requests
+chardet==3.0.4
+    # via requests
+idna==2.7
+    # via requests
 python-dateutil==2.5.3
+    # via -r requirements.in
+requests==2.20.0
+    # via
+    #   -r requirements.in
+    #   requests-futures
 requests-futures==0.9.7
-requests==2.10.0
-six==1.10.0               # via python-dateutil
+    # via -r requirements.in
+six==1.10.0
+    # via python-dateutil
+urllib3==1.24.3
+    # via requests
