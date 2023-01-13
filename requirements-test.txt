@@ -4,27 +4,55 @@
 #
 #    pip-compile --no-index --output-file requirements-test.txt requirements-test.in
 #
-colorama==0.3.7           # via zest.releaser
+certifi==2022.12.7
+    # via requests
+chardet==3.0.4
+    # via requests
+colorama==0.3.7
+    # via zest-releaser
 coverage==4.0.3
+    # via
+    #   -r requirements-test.in
+    #   pytest-cov
 flake8==2.5.4
-funcsigs==1.0.2           # via mock
-mccabe==0.4.0             # via flake8
-mock==2.0.0               # via pytest-mock
-pbr==1.10.0               # via mock
-pep8==1.7.0               # via flake8
-pkginfo==1.2.1            # via twine
-py==1.4.31                # via pytest
-pyflakes==1.0.0           # via flake8
-pytest-cov==2.2.1
-pytest-mock==1.2
+    # via -r requirements-test.in
+idna==2.7
+    # via requests
+mccabe==0.4.0
+    # via flake8
+pep8==1.7.0
+    # via flake8
+pkginfo==1.2.1
+    # via twine
+py==1.4.31
+    # via pytest
+pyflakes==1.0.0
+    # via flake8
 pytest==2.9.1
+    # via
+    #   -r requirements-test.in
+    #   pytest-cov
+    #   pytest-mock
+pytest-cov==2.2.1
+    # via -r requirements-test.in
+pytest-mock==1.2
+    # via -r requirements-test.in
+requests==2.20.0
+    # via
+    #   requests-mock
+    #   requests-toolbelt
+    #   twine
 requests-mock==1.0.0
-requests-toolbelt==0.6.0  # via twine
-requests==2.10.0          # via requests-mock, requests-toolbelt, twine
-six==1.10.0               # via mock, requests-mock, zest.releaser
-twine==1.6.5              # via zest.releaser
-zest.releaser==6.6.4
-
-# The following packages are commented out because they are
-# considered to be unsafe in a requirements file:
-# setuptools                # via twine, zest.releaser
+    # via -r requirements-test.in
+requests-toolbelt==0.6.0
+    # via twine
+six==1.10.0
+    # via
+    #   requests-mock
+    #   zest-releaser
+twine==1.6.5
+    # via zest-releaser
+urllib3==1.24.3
+    # via requests
+zest-releaser==6.6.4
+    # via -r requirements-test.in
