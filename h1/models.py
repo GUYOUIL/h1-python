@@ -612,3 +612,7 @@ class ActivityUserBannedFromProgram(ActivityBase):
 
     def _activity_hydrate(self):
         self._make_relationship("removed_user", self._hydrate_object)
+
+
+class ActivityReportCustomFieldValueUpdated(ActivityBase):
+    TYPE = "activity-report-custom-field-value-updated"
