@@ -607,6 +607,13 @@ class ActivityUserAssignedToBug(ActivityBase):
         self._make_relationship("assigned_user", self._hydrate_object)
 
 
+class ActivityReassignedToTeam(ActivityBase):
+    TYPE = "activity-reassigned-to-team"
+
+    def _activity_hydrate(self):
+        self._make_relationship("assigned_team", self._hydrate_object)
+
+
 class ActivityUserBannedFromProgram(ActivityBase):
     TYPE = "activity-user-banned-from-program"
 
