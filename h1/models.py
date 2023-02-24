@@ -623,3 +623,9 @@ class ActivityUserBannedFromProgram(ActivityBase):
 
 class ActivityReportCustomFieldValueUpdated(ActivityBase):
     TYPE = "activity-report-custom-field-value-updated"
+
+class ActivityNobodyAssignedToBug(ActivityBase):
+    TYPE = "activity-nobody-assigned-to-bug"
+
+
+
