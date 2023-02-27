@@ -629,5 +629,5 @@ class ActivityNobodyAssignedToBug(ActivityBase):
     TYPE = "activity-nobody-assigned-to-bug"
 
 
-class ActivityReportCollaboratorInvited:
+class ActivityReportCollaboratorInvited(ActivityBase):
     TYPE = "activity-report-collaborator-invited"

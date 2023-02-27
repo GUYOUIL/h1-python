@@ -22,7 +22,7 @@
 
 from __future__ import print_function, unicode_literals, division, absolute_import
 
-__version__ = "1.4.6"
+__version__ = "1.4.6.1"
 
 from .client import (
     HackerOneClient,
