@@ -624,8 +624,10 @@ class ActivityUserBannedFromProgram(ActivityBase):
 class ActivityReportCustomFieldValueUpdated(ActivityBase):
     TYPE = "activity-report-custom-field-value-updated"
 
+
 class ActivityNobodyAssignedToBug(ActivityBase):
     TYPE = "activity-nobody-assigned-to-bug"
 
 
-
+class ActivityReportCollaboratorInvited:
+    TYPE = "activity-report-collaborator-invited"
