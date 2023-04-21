@@ -490,11 +490,14 @@ class ActivityBugResolved(ActivityStateChange):
 class ActivityBugSpam(ActivityStateChange):
     TYPE = "activity-bug-spam"
 
+
 class ActivityBugRetesting(ActivityStateChange):
     TYPE = "activity-bug-retesting"
 
+
 class ActivityBugTriaged(ActivityStateChange):
     TYPE = "activity-bug-triaged"
+
 
 class ActivityBugPriorityChanged(ActivityStateChange):
     TYPE = "activity-bug-priority-changed"
@@ -502,6 +505,10 @@ class ActivityBugPriorityChanged(ActivityStateChange):
 
 class ActivityBugPendingProgramPeview(ActivityStateChange):
     TYPE = "activity-bug-pending-program-review"
+
+
+class ActivityUserCompletedRetest(ActivityStateChange):
+    TYPE = "activity-user-completed-retest"
 
 
 class ActivityChangedScope(ActivityStateChange):
