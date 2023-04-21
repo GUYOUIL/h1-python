@@ -490,6 +490,8 @@ class ActivityBugResolved(ActivityStateChange):
 class ActivityBugSpam(ActivityStateChange):
     TYPE = "activity-bug-spam"
 
+class ActivityBugRetesting(ActivityStateChange):
+    TYPE = "activity-bug-retesting"
 
 class ActivityBugTriaged(ActivityStateChange):
     TYPE = "activity-bug-triaged"
