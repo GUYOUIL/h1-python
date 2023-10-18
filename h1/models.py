@@ -644,3 +644,7 @@ class ActivityReportCollaboratorInvited(ActivityBase):
 
 class ActivityReportCollaboratorJoined(ActivityBase):
     TYPE = 'activity-report-collaborator-joined'
+
+
+class ActivityReportTriageSummaryCreated(ActivityBase):
+    TYPE = "activity-report-triage-summary-created"
