@@ -5,4 +5,4 @@
 requests>2.4,<3.0
 requests_futures
 python-dateutil
-ratelimit=>2.2.1
+ratelimit
