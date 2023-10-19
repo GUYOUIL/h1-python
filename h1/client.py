@@ -23,6 +23,7 @@ from __future__ import print_function, unicode_literals, division, absolute_impo
 from requests.auth import HTTPBasicAuth
 from requests_futures.sessions import FuturesSession
 from six.moves.urllib.parse import quote
+from ratelimit import limits, sleep_and_retry
 
 from .models import hydrate_object, hydrate_objects
 from .lazy_listing import LazyListing
@@ -62,6 +63,8 @@ class HackerOneClient(object):
         self.s.headers.update(self.REQUEST_HEADERS)
         self.s.auth = HTTPBasicAuth(self.identifier, self.token)
 
+    @sleep_and_retry
+    @limits(calls=2, period=1)
     def make_request(self, url, params=None, data=None, method=None):
         if method is None:
             method = "GET"

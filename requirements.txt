@@ -22,3 +22,5 @@ six==1.10.0
     # via python-dateutil
 urllib3==1.24.3
     # via requests
+ratelimit==2.2.1
+
